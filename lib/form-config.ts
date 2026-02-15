@@ -79,7 +79,7 @@ export interface StepConfig {
 // ── UI labels / copy driven from config ──────────────────────────────────────
 
 export const UI_LABELS = {
-  formTitle: "Create Your Profile",
+  formTitle: "Registration Form",
   backButton: "Back",
   continueButton: "Continue",
   submitButton: "Submit Registration",
@@ -103,21 +103,17 @@ export const SELECT_OPTIONS = {
     { value: "prefer-not-to-say", label: "Prefer not to say" },
   ],
   states: [
-    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
-    "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho",
-    "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
-    "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
-    "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada",
-    "New Hampshire", "New Jersey", "New Mexico", "New York",
-    "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon",
-    "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
-    "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington",
-    "West Virginia", "Wisconsin", "Wyoming",
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
+    "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
+    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
+    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
+    "Uttar Pradesh", "Uttarakhand", "West Bengal",
+    "Andaman and Nicobar Islands", "Chandigarh", "Dadra and Nagar Haveli and Daman and Diu",
+    "Lakshadweep", "Delhi", "Puducherry", "Ladakh", "Jammu and Kashmir",
   ].map((s) => ({ value: s, label: s })),
   countries: [
-    "United States", "Canada", "United Kingdom", "Australia", "Germany",
-    "France", "India", "Japan", "Brazil", "Mexico", "Spain", "Italy",
-    "Netherlands", "Sweden", "Switzerland", "Singapore", "South Korea",
+    "India",
   ].map((c) => ({ value: c, label: c })),
   yearsOfExperience: [
     "0-1 years", "1-3 years", "3-5 years", "5-10 years", "10-15 years", "15+ years",
@@ -158,11 +154,12 @@ export const FORM_STEPS: StepConfig[] = [
         accept: "image/*",
         gridCols: 12,
       },
+
       {
         name: "firstName",
         label: "First Name",
         type: "text",
-        placeholder: "John",
+        placeholder: "Revathi",
         required: true,
         gridCols: 6,
         validation: { required: true, minLength: 2 },
@@ -171,11 +168,12 @@ export const FORM_STEPS: StepConfig[] = [
           minLength: "First name must be at least 2 characters",
         },
       },
+
       {
         name: "lastName",
         label: "Last Name",
         type: "text",
-        placeholder: "Doe",
+        placeholder: "Revathi",
         required: true,
         gridCols: 6,
         validation: { required: true, minLength: 2 },
@@ -218,7 +216,7 @@ export const FORM_STEPS: StepConfig[] = [
         name: "email",
         label: "Email Address",
         type: "email",
-        placeholder: "john@example.com",
+        placeholder: "revathi@example.com",
         required: true,
         gridCols: 6,
         icon: "Email",
@@ -232,19 +230,21 @@ export const FORM_STEPS: StepConfig[] = [
         name: "phone",
         label: "Phone Number",
         type: "tel",
-        placeholder: "+1 (555) 000-0000",
+        placeholder: "+91 98765 43210",
         required: true,
         gridCols: 6,
         icon: "Phone",
         validation: {
           required: true,
           minLength: 10,
-          pattern: { value: "^[0-9+\\-() ]+$" },
+          maxLength: 14,
+          pattern: { value: "^[+0-9\\s-]{10,14}$" },
         },
         errorMessages: {
           required: "Phone number is required",
           minLength: "Phone number must be at least 10 digits",
-          pattern: "Please enter a valid phone number",
+          maxLength: "Phone number cannot exceed 14 characters",
+          pattern: "Please enter a valid phone number (e.g. +91 98765 43210)",
         },
       },
       {
@@ -474,12 +474,7 @@ export const FORM_STEPS: StepConfig[] = [
         validation: { isUrl: true },
         errorMessages: { isUrl: "Please enter a valid URL" },
       },
-      {
-        name: "openToCollaboration",
-        label: "I'm open to collaboration on projects",
-        type: "checkbox",
-        gridCols: 12,
-      },
+
     ],
     arraySections: [
       {

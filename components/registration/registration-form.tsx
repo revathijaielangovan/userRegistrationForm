@@ -23,7 +23,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import SendIcon from "@mui/icons-material/Send";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
-import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 
@@ -282,14 +282,14 @@ export function RegistrationFormWrapper() {
                   height: 48,
                   borderRadius: "14px",
                   background:
-                    "linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)",
+                    "linear-gradient(135deg, #0284c7 0%, #0369a1 100%)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 4px 14px rgba(37, 99, 235, 0.3)",
+                  boxShadow: "0 4px 14px rgba(2, 132, 199, 0.3)",
                 }}
               >
-                <AppRegistrationIcon
+                <HowToRegIcon
                   sx={{ fontSize: 28, color: "#FFFFFF" }}
                 />
               </Box>
